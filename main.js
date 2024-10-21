@@ -13,6 +13,18 @@ document.getElementById("zeros").addEventListener("click", zeros);
 document.getElementById("vertex").addEventListener("click", vertex);
 
 /*** Functions ***/
+function delta(a, b) {
+    return a - b;
+}
+function slope(x1, y1, x2, y2) {
+    const deltaY = delta(y1, y2);
+    const deltaX = delta(x1, x2);
+    return deltaY / deltaX;
+}
+
+function average(n1, n2) {
+    return (n1 + n2) / 2;
+}
 
 // Round to the nearest `decimals` number of decimals
 function round(value, decimals) {
