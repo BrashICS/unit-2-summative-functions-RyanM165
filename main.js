@@ -37,7 +37,17 @@ function round_user(value) {
     let d = Number(document.getElementById("rounding").value)
 
 }
+function delta(x1, y1, x2, y2) {
+    return {
+        deltaX: x2 - x1,
+        deltaY: y2 - y1
+    };
+}
 
+function length(x1, y1, x2, y2) {
+    const { deltaX, deltaY } = delta(x1, y1, x2, y2);
+    return Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
+}
 // Calculate the y-value of a parabola from standand form
 function y_quad(a, b, c, x) {
 

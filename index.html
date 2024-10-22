@@ -31,7 +31,116 @@
             <h4>Part 1 - Geometry</h4>
             
         </div>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Rectangular Prism Volume Calculator</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 20px;
+                }
+                input {
+                    margin: 5px;
+                }
+                #result {
+                    margin-top: 20px;
+                    font-weight: bold;
+                }
+            </style>
+        </head>
+        <body>
         
+            <h1>Calculate the Volume of a Rectangular Prism</h1>
+            <label for="length">Length:</label>
+            <input type="number" id="length" required>
+            <label for="width">Width:</label>
+            <input type="number" id="width" required>
+            <label for="height">Height:</label>
+            <input type="number" id="height" required>
+            <label for="decimals">Decimals:</label>
+            <input type="number" id="decimals" min="0" required>
+            <button onclick="rect_prism_volume()">Calculate Volume</button>
+        
+            <div id="result"></div>
+        
+            <script>
+                function rect_prism_volume() {
+                    const length = parseFloat(document.getElementById('length').value);
+                    const width = parseFloat(document.getElementById('width').value);
+                    const height = parseFloat(document.getElementById('height').value);
+                    const decimals = parseInt(document.getElementById('decimals').value);
+                    
+                    if (isNaN(length) || isNaN(width) || isNaN(height) || isNaN(decimals)) {
+                        document.getElementById('result').innerText = "Please enter valid numbers.";
+                        return;
+                    }
+        
+                    const volume = length * width * height;
+                    const roundedVolume = volume.toFixed(decimals);
+                    document.getElementById('result').innerText = `The volume of the rectangular prism is: ${roundedVolume}`;
+                }
+            </script>
+           <title>Rectangular Prism Area</title>
+           <script>
+               function rect_prism_area(length, width, height) {
+                   return 2 * (length * width + width * height + height * length);
+               }
+       
+               function calculateArea() {
+                   const length = parseFloat(document.getElementById('length').value);
+                   const width = parseFloat(document.getElementById('width').value);
+                   const height = parseFloat(document.getElementById('height').value);
+                   const area = rect_prism_area(length, width, height);
+                   document.getElementById('result').innerText = 'Surface Area: ' + area;
+               }
+           </script>
+       </head>
+       <body>
+           <h1>Calculate Rectangular Prism Surface Area</h1>
+           <label for="length">Length:</label>
+           <input type="number" id="length" required>
+           <br>
+           <label for="width">Width:</label>
+           <input type="number" id="width" required>
+           <br>
+           <label for="height">Height:</label>
+           <input type="number" id="height" required>
+           <br>
+           <button onclick="calculateArea()">Rectangular Prism Area</button>
+           <p id="result"></p>
+       
+        </body>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Sphere Calculations</title>
+            <script>
+                function sphere_volume() {
+                    const radius = document.getElementById('radius').value;
+                    const volume = (4/3) * Math.PI * Math.pow(radius, 3);
+                    alert('Volume of the sphere: ' + volume);
+                }
+        
+                function sphere_area() {
+                    const radius = document.getElementById('radius').value;
+                    const area = 4 * Math.PI * Math.pow(radius, 2);
+                    alert('Surface area of the sphere: ' + area);
+                }
+            </script>
+        </head>
+        <body>
+            <h1>Sphere Calculations</h1>
+            <label for="radius">Enter Radius:</label>
+            <input type="number" id="radius" required>
+            <button onclick="sphere_volume()">Sphere Volume</button>
+            <button onclick="sphere_area()">Sphere Area</button>
+        </body>
+        <input type="text" id="length" placeholder="Enter Length">
+<input type="text" id="width" placeholder="Enter Width">
+<input type="text" id="height" placeholder="Enter Height">
+<input type="text" id="radius" placeholder="Enter Radius">
+
         <hr>
 
         <!-- Quadratics -->
