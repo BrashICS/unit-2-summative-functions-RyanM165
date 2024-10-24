@@ -52,13 +52,34 @@ function length(x1, y1, x2, y2) {
 function y_quad(a, b, c, x) {
 
 }
-
-// Determine the zeros of a quadratic using user-inputs for a, b, and c
-function zeros() {
+function y_quad(a, b, c, x) {
+    return a * x * x + b * x + c;
 }
+// Determine the zeros of a quadratic using user-inputs for a, b, and c
+function Zeros(a, b, c) {}
+    const discriminant = b * b - 4 * a * c;
+    if (discriminant > 0) {
+        const root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+        const root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+        return [root1, root2];
+    } else if (discriminant === 0) {
+        const root = -b / (2 * a);
+        return [root];
+    } else {
+        return [];
+    }
 
 // Determine the vertex of a quadratic using user-inputs for a, b, and c
 function vertex() {
+const a= parsefloat(prompt("Enter the value of a:"));
+const b = parseFloat(prompt("Enter the value of b:"));
+    const c = parseFloat(prompt("Enter the value of c:"));
 
+    const h = -b / (2 * a);
+    const k = (4 * a * c - b * b) / (4 * a);
+
+    return { h, k };
 }
+const result = vertex();
+console.log(`Vertex: (${result.h}, ${result.k})`);
 
