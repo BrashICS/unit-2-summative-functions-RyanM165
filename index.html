@@ -66,18 +66,18 @@
         
             <script>
                 function rect_prism_volume() {
-                    const length = parseFloat(document.getElementById('length').value);
-                    const width = parseFloat(document.getElementById('width').value);
-                    const height = parseFloat(document.getElementById('height').value);
-                    const decimals = parseInt(document.getElementById('decimals').value);
+                    let length = parseFloat(document.getElementById('length').value);
+                    let width = parseFloat(document.getElementById('width').value);
+                    let height = parseFloat(document.getElementById('height').value);
+                    let decimals = parseInt(document.getElementById('decimals').value);
                     
                     if (isNaN(length) || isNaN(width) || isNaN(height) || isNaN(decimals)) {
                         document.getElementById('result').innerText = "Please enter valid numbers.";
                         return;
                     }
         
-                    const volume = length * width * height;
-                    const roundedVolume = volume.toFixed(decimals);
+                    let volume = length * width * height;
+                    let = volume.toFixed(decimals);
                     document.getElementById('result').innerText = `The volume of the rectangular prism is: ${roundedVolume}`;
                 }
             </script>
@@ -88,10 +88,10 @@
                }
        
                function calculateArea() {
-                   const length = parseFloat(document.getElementById('length').value);
-                   const width = parseFloat(document.getElementById('width').value);
-                   const height = parseFloat(document.getElementById('height').value);
-                   const area = rect_prism_area(length, width, height);
+                   let length = parseFloat(document.getElementById('length').value);
+                   let width = parseFloat(document.getElementById('width').value);
+                   let height = parseFloat(document.getElementById('height').value);
+                   let area = rect_prism_area(length, width, height);
                    document.getElementById('result').innerText = 'Surface Area: ' + area;
                }
            </script>
@@ -117,14 +117,14 @@
             <title>Sphere Calculations</title>
             <script>
                 function sphere_volume() {
-                    const radius = document.getElementById('radius').value;
-                    const volume = (4/3) * Math.PI * Math.pow(radius, 3);
+                    let radius = document.getElementById('radius').value;
+                    let volume = (4/3) * Math.PI * Math.pow(radius, 3);
                     alert('Volume of the sphere: ' + volume);
                 }
         
                 function sphere_area() {
-                    const radius = document.getElementById('radius').value;
-                    const area = 4 * Math.PI * Math.pow(radius, 2);
+                    let radius = document.getElementById('radius').value;
+                    let area = 4 * Math.PI * Math.pow(radius, 2);
                     alert('Surface area of the sphere: ' + area);
                 }
             </script>
